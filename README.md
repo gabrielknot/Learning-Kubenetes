@@ -54,32 +54,5 @@ foo@user:~$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```console
 foo@user:~$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
-### Data Structure in Kubernetes
 
-____________________________________________________________________________________
-|																							                                      |
-|																							                                      |
-|		Deployment - Responsável	pelo gerenciamento da versão de ReplicaSet.						|
-|	________________________________________________________________________________  |
-|	| 		ReplicaSet - Responsável pela manutenção dos pods								          |	|
-| |       			na quantidade determinada.											                  | |
-|	|		_____________________________________________________________________+		  | |	
-|	|		| |———————————————————————————————————————————---------------------------|  | |
-|	|		| |	PODS - Menor unidade de um cluster Kubernetes, mas como em um átomo	 |	|	|	
-|	|		| |		ele não e indivisivel?												                     |	|	|
-|	|		| |			___________________________________+            			           |	|	|
-|	|		| |	    |  |—————————————————————————————-----|                          |  |	|
-|	|		| |			|  |												          | 	                       |	|	|	
-|	|		| |			|  |				CONTAINERS						    |                    			 |	|	|
-|	|		| |			|  |												          |                          | 	|	|	
-|	|		| |			|  |          											  |                          |	|	|
-|_|   |	|_____|_ |												          |		                    	 |	|_|
-	|___| | SERV|CE| 												          |                   			 |__|
-			|_|_______ |											            |_________________________ |	
-				|		  |__|__________________________________|
-				|
-				 \
-				  \
-				    \	   ___—> Comunicação e Chaveamento de Acesso.———> LoadBalancer - Chaveamento de acesso por particionamento inteligente de recursos.
-				      \_/
 					
